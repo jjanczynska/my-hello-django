@@ -17,22 +17,18 @@ if os.path.isfile("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-il&l(%+vv=+j=-=6cyfi8*@xj8=8z4#hkq9ni(fqqkff6$su(0'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-il&l(%+vv=+j=-=6cyfi8*@xj8=8z4#hkq9ni(fqqkff6$su(0')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jjanczynska-myhellodjan-kwcbhm4kymm.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 
 # Application definition
