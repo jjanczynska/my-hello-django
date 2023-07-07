@@ -19,13 +19,13 @@ if os.path.isfile("env.py"):
 development = os.environ.get('DEVELOPMENT', False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = '6wkvxc7z3^&6*dxx&!$49cyi@_xf#$=5-!6+4omko5j6ko&+mh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
